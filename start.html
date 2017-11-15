@@ -1,0 +1,196 @@
+﻿<!doctype html>
+<html lang="en" ng-app="xmp.app">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Landing Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="./deps/xmp/css/xmp.css" rel="stylesheet" media="screen">
+    <link href="./css/bootstrap-select.css" rel="stylesheet" media="screen">
+    <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="./css/main.css" rel="stylesheet" media="screen">
+    <link href="./css/font-awesome.css" rel="stylesheet" media="screen">
+    <link href="https://ajax.xmcircle.com/ajax/libs/xmpl/1.9.1/xmp/css/xmp.css" rel="stylesheet" media="screen">
+
+    <!-- XMPie XMPL library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script src="https://ajax.xmcircle.com/ajax/libs/xmpl/1.9.1/xmp/js/xmp.min.js"></script> -->
+    <script type="text/javascript" src="./deps/xmp/js/xmp.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./xmpcfg.js"></script>
+</head>
+<body>
+    <div class="main-wrapper">
+        <header>
+            <div class="navbar-fixed-top">
+                <div class="container">
+                    <nav class="navbar navbar-default">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#"><img src="./images/logo.png" alt="XMPie" /></a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-collapse">
+                                <ul class="nav navbar-nav navbar-right">                                    
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipient&nbsp;IDs<span class="caret"></span></a>
+                                        <form method="GET" class="dropdown-menu">
+                                            <ul>
+                                                <li><a href="display_data.html?rid=Jerry.Jones@example.com">Jerry.Jones@example.com</a></li>
+                                                <li><a href="display_data.html?rid=Jennifer.Jones@example.com">Jennifer.Jones@example.com</a></li>
+                                                <li><a href="display_data.html?rid=Jimmy.Jones@example.com">Jimmy.Jones@example.com</a></li>
+                                                <li><a href="display_data.html?rid=Sandra.Smith@example.com">Sandra.Smith@example.com</a></li>
+                                                <li><a href="display_data.html?rid=Sam.Smith@example.com">Sam.Smith@example.com</a></li>
+                                                <li><a href="display_data.html?rid=Mary.McAndrews@example.com">Mary.McAndrews@example.com</a></li>
+                                                <li><a href="display_data.html?rid=Mike.McAndrews@example.com">Mike.McAndrews@example.com</a></li>
+                                                <li><a href="display_data.html?rid=Gina.Green@example.com">Gina.Green@example.com</a></li>
+                                            </ul>
+                                        </form>
+                                    </li>                               
+                                    <li><a href="register.html"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add&nbsp;Recipient</a></li>
+                                    <li class="github"><a href="#">XMPL&nbsp;on&nbsp;GitHub</a></li>
+                                    <li class="twitter"><a href="#">Twitter</a></li>
+                                    <li class="facebook"><a href="#">Facebook</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="wrapper">
+            <div class="container">
+                <div class="promo">
+                    <h1>Landing&nbsp;Page</h1>
+                    <p>Your journey into openXM by XMPIE starts here.</p>
+                </div>
+                <div ng-controller="XMPPersonalizedPage" xmp-tracking-page-name="landing page" xmp-cloak="">
+                    <div class="section" xmp-update-on-page-load xmp-ador="xmp.r['Visited']" xmp-value="1">
+                        <div class="holder">
+                            <header>
+                                <h1 class="pull-left">Text ADOR Example</h1>
+                            </header>
+                            <div class="section-content">
+                                <div>{{xmp.r['First Name']}}</div>
+                                <div>Hello, {{xmp.r['First Name']}} {{xmp.r['Last Name']}}!</div>
+                            </div>
+                        </div>
+                        <div class="holder">
+                            <h1>Image ADOR</h1>
+                            The asset from the server
+                            <img xmp-image-asset="xmp.r['MainImage']" />
+                        </div>
+                        <div class="holder">
+                            <h1>Another Image ADOR</h1>
+                            The asset from the site images folder, using the ADOR to determine the value
+                            <img xmp-src="images/{{xmp.r['Image2']}}" />
+                        </div>
+                        <div class="holder">
+                            <h1>Text File ADOR</h1>
+                            <div xmp-text-asset="xmp.r['Introduction']"></div>
+                        </div>
+                        <div class="holder">
+                            <h1>Style ADOR</h1>
+                            <span class="mark" xmp-class="xmp.r['Theme']">What's up? Now with regular class</span>
+                        </div>
+                        <div class="holder">
+                            <h1>Visibility ADOR</h1>
+                            <div xmp-show="xmp.r['IsStudent']">this text should be visible if isStudent is true</div>
+                        </div>
+                        <div class="holder">
+                            <h1>Link ADOR</h1>
+                            <a xmp-href="{{xmp.r['Blog']}}" xmp-tracking-action='blog link clicked'>users blog</a>
+                        </div>
+                        <div class="holder">
+                            <h1>Table ADOR</h1>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Calculs</td>
+                                        <td><span>4</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>C++</td>
+                                        <td><span>2</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Javascript</td>
+                                        <td><span>2</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="holder">
+                            <h1>Social Media</h1>
+                            <ul class="social-networks">
+                                <li>
+                                    Share on facebook with site asset
+                                    <button type="button" class="btn xmp-facebook-share-btn"
+                                            xmp-facebook-share
+                                            xmp-appID="THE_APP_ID"
+                                            xmp-caption="registration page"
+                                            xmp-name="uCreate Digital Rocks"
+                                            xmp-description="uCreate Digital is XMPie web tech"
+                                            xmp-target-link="./register.html"
+                                            xmp-thumbnail="./images/{{xmp.r['Image2']}}"
+                                            xmp-track='share on facebook'></button>
+                                </li>
+                                <li>
+                                    Share on facebook with server asset
+                                    <xmp-facebook-share xmp-appID="THE_APP_ID"
+                                                        xmp-caption="registration page"
+                                                        xmp-name="uCreate Digital Rocks"
+                                                        xmp-description="uCreate Digital is XMPie web tech"
+                                                        xmp-thumbnail-asset="xmp.r['MainImage']"
+                                                        xmp-target-link="./register.html"></xmp-facebook-share>
+                                </li>
+                                <li>
+                                    The attribute of HTML <b>&lt;a&gt;</b> Tag
+                                    <a xmp-twitter-share
+                                       xmp-url="http://www.pdfhummus.com/"
+                                       xmp-shared-text="[attribute] I am {{ xmp.r['First Name']}} {{ xmp.r['Last Name']}}, and i approve this URL"></a>
+                                </li>
+                                <li>
+                                    The <b>xmp-twitter-share</b> element
+                                    <xmp-twitter-share xmp-url="http://www.pdfhummus.com/"
+                                                       xmp-shared-text="[element] I am {{ xmp.r['First Name']}} {{ xmp.r['Last Name']}}, and i approve this URL" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <ul class="socials pull-right">
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">XMPIE</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+                <p>&copy; XMPie, All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 30) {
+                $(".main-wrapper").addClass("header-filled");
+            } else {
+                $(".main-wrapper").removeClass("header-filled");
+            }
+        });
+    </script>
+</body>
+</html>

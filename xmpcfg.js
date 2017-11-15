@@ -1,0 +1,1 @@
+var xmpcfg = {access: { accessToken: 'fead9edc-c6a4-499e-96aa-c191e7b7fb98_4c61c22c-1ea9-4f6f-9753-a1d5228d2c33_08e6a955fa4c474c8b59069af22d71ae', url: 'http://marketing6.xmpie.net/XMPieXMPL_REST_API', circleProjectID:'4c61c22c-1ea9-4f6f-9753-a1d5228d2c33', circleProjectName: 'XMPL-SDK-Sample' }};

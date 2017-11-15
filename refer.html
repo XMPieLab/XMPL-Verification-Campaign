@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="en" ng-app="xmp.app">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Sample Recipient Page</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+	<link href="./deps/xmp/css/xmp.css" rel="stylesheet" media="screen">
+    <link href="./css/bootstrap-select.css" rel="stylesheet" media="screen">
+    <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="./css/main.css" rel="stylesheet" media="screen">
+    <link href="./css/font-awesome.css" rel="stylesheet" media="screen">
+	<link href="https://ajax.xmcircle.com/ajax/libs/xmpl/1.9.1/xmp/css/xmp.css" rel="stylesheet" media="screen">
+
+	<!-- XMPie XMPL library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- <script src="https://ajax.xmcircle.com/ajax/libs/xmpl/1.9.1/xmp/js/xmp.min.js"></script> -->
+	<script type="text/javascript" src="./deps/xmp/js/xmp.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+	<script type="text/javascript" src="./xmpcfg.js"></script>
+	
+</head>
+<body>
+	<div class="main-wrapper">
+		<header>
+            <div class="navbar-fixed-top">
+                <div class="container">
+                    <nav class="navbar navbar-default">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#"><img src="./images/logo.png" alt="XMPie"/></a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="start.html"><i class="fa fa-history" aria-hidden="true"></i>&nbsp;Landing&nbsp;Page</a></li>
+                                                                        
+                                    <li class="github"><a href="#">XMPL on GitHub</a></li>
+                                    <li class="twitter"><a href="#">Twitter</a></li>
+                                    <li class="facebook"><a href="#">Facebook</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+		<div class="wrapper">
+			<div class="container">
+				<div class="promo">
+                    <h1>Refer a friend</h1>
+                </div>
+                <div ng-controller="XMPPersonalizedPage">
+                    <div class="section">
+                        <h1>Hi, {{xmp.r['First Name']}}. Wanna recommend us to a friend?</h1>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <img xmp-image-asset="xmp.r['MainImage']"/>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="form-holder">
+                                    <div class="form-title">Refer a friend form</div>
+                                        <div class="section">
+                                            <h2 class="text-center">Let us know about your friend:</h2>
+                                            <form xmp-refer xmp-success-url="referThankYou.html">
+                                                <div class="form-group">
+                                                    <label for="text1">First Name</label>
+                                                    <input id="text1" type="text" class="form-control" xmp-write-ador="xmp.referredRecipient['First Name']">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="text2">Last Name</label>
+                                                    <input id="text2" type="text" class="form-control" xmp-write-ador="xmp.referredRecipient['Last Name']">
+                                                </div>
+                                                <div class="form-group">
+                                                     <label for="text3">Email</label>
+                                                     <input id="text3" type="email" class="form-control" xmp-write-ador="xmp.referredRecipient.Email">
+                                                </div>
+                                                <button class="btn btn-minor" type="submit" value="save">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<footer>
+                <div class="container">
+                    <ul class="socials pull-right">
+                        <li class="twitter"><a href="#">Twitter</a></li>
+                        <li class="facebook"><a href="#">Facebook</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">XMPIE</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                    <p>&copy; XMPie, All Rights Reserved</p>
+                </div>
+            </footer>
+		</div>
+    </div>
+	<script>
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            if(scroll >= 30) {
+              $(".main-wrapper").addClass("header-filled");
+            } else {
+              $(".main-wrapper").removeClass("header-filled");
+            }
+        });
+    </script>
+</body>
+</html>
